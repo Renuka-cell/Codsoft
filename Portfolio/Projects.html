@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+     /* body{
+        background-image: url('https://thumbs.dreamstime.com/b/kompetenzkomplex-wie-ein-r%C3%A4tsel-abgebildet-als-wort-geschicklichkeit-auf-einem-puzzle-st%C3%BCcke-zeigen-dass-schwierig-sein-kann-und-164219254.jpg');
+        background-size :800px;;
+        background-repeat: no-repeat;
+        background-size:cover; 
+      }*/
+      .ul-list{
+        font-size: large;
+        list-style-type:none;
+        margin-top: 200px;
+        padding:0;
+        
+      }
+      .ul-list li{
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+      }
+      @keyframes fadeIn{
+        to{
+          opacity: 1;
+        }
+      }
+      .ul-list li:nth-child(1){
+        animation-delay: 0s;
+      }
+      .ul-list li:nth-child(2){
+        animation-delay: 1s;
+      }
+      .ul-list li:nth-child(3){
+        animation-delay: 2s;
+      }
+      /*.ul-list li:nth-child(4){
+        animation-delay: 3s;
+      }
+      .ul-list li:nth-child(5){
+        animation-delay: 4s;
+      }
+      .ul-list li:nth-child(6){
+        animation-delay: 5s;
+      }
+      .ul-list li:nth-child(7){
+        animation-delay: 6s;
+      }*/
+      body{
+        background-image: url('https://i.pinimg.com/736x/07/a7/1c/07a71cbc727d56b687f934ea64fe8426.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .image{
+        float: right;
+        margin-right: 50px;
+        margin-top: 150px;
+        height: min-content;
+        width: min-content;
+      }
+
+
+      .ul-list li::before{
+        content: "\2192";
+        font-size: 50px;
+      }
+      
+      
+    </style>
+</head>
+<body>
+<div class="desktop">
+    <div class="group">
+        <div class="overlap">
+          <div class="overlap-group-wrapper">
+            <div class="overlap-group"><div class="text-wrapper"><a style="text-decoration: none" href="index.html">About</a></div></div>
+          </div>
+          <div class="overlap-wrapper">
+            <div class="overlap-group"><div class="text-wrapper-2"><a style="text-decoration:none"  href="Skills.html">Skills</a></div></div>
+          </div>
+          <div class="div-wrapper">
+            <div class="overlap-group"><div class="text-wrapper-3"><a style="text-decoration: none"  href="Projects.html">Projects</a></div></div>
+          </div>
+          <div class="group-2">
+            <div class="overlap-2"><div class="text-wrapper-4"><a style="text-decoration:none"   href="index.html">Contact</a></div></div>
+          </div>
+          <div class="text-wrapper-5">Portfolio</div>
+          <img class="healthicons-ui-user" src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg" />
+        </div>
+    </div>
+      
+     
+</div>
+<!--<center>
+  <h2>My Skills</h2>
+  <ul>
+    <li>Good team player</li>
+    <li>Logical resoning</li>
+    <li>Analytic thinking</li>
+    <li>Critical thinking</li>
+    <li>leadership quality</li>
+    <li>Containarization</li>
+  </ul>
+</center>--> 
+<img src="https://img.freepik.com/free-vector/project-word-concept_23-2147844145.jpg" alt="SKILLS" class="image">
+
+<ul class="ul-list">
+  <li>Yoga,Meditation and Stress management</li>
+  <li>Participated in Hackethon-2023</li>
+  <li>Heat dry washing machine</li>
+ 
+</ul>
+
+</body>
+</html>
