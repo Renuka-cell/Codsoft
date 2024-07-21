@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            
+        }
+        /* Wrapper */
+        .wrapper {
+            background-image: url('https://static.vecteezy.com/system/resources/thumbnails/030/163/508/small_2x/the-best-coffee-shops-in-the-world-ai-generated-photo.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            /*display: flex;
+            flex-direction: column;*/
+        }
+        /* Navigation Bar */
+        .nav-bar {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            display: inline;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-bar ul {
+            list-style: none;
+            margin-left: 550px;
+            margin-top: 20px;
+            padding: 0;
+            display: flex;
+
+        }
+        .nav-bar li {
+            margin-right: 20px;
+        }
+        .nav-bar a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .nav-bar a:hover {
+            color: #ccc;
+        }
+        .login-btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-btn:hover {
+            background-color: #444;
+        }
+        /* Logo */
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border-radius: 50%;
+        }
+        /* Sections */
+        .section {
+            padding: 2rem;
+            margin-bottom: 20px;
+            /*background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+        }
+        .section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        /* Home Section */
+        .intro{
+            /*background-image: url('https://static.vecteezy.com/system/resources/thumbnails/030/163/508/small_2x/the-best-coffee-shops-in-the-world-ai-generated-photo.jpg');
+            background-size: cover;
+            background-position: center;*/
+            height: calc(100vh - 100px);
+            /*display: flex;*/
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            padding-left: 400px;
+            padding-top: 400px;
+            font-family:cursive;
+            font-size:30px;
+        }
+        .home-section h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        /* Menu Section 
+        .menu-section {
+            display:inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .menu-item {
+            width: 250px;
+            margin: 20px;
+            background-color: #FBF6D9;
+            border: 1px solid #ddd;
+            box-shadow: 10px 10px 5px black;
+            border-radius: 10px;
+            padding: 10px;
+            display:flex;
+            flex-direction:column;
+            align-items: center;
+        }
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .menu-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .menu-item p {
+            font-size: 16px;
+            color: #666;
+        }*/
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        h2{
+            font-size: 33px;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 100px;
+            color: white;
+        }
+        p{
+            text-align:left;
+            color: white;
+        }
+        hr{
+            width: 40px;
+            margin-left: 680px;
+        }
+        
+        .down{
+            background-color: #8b597b;
+        }
+        .A1{
+            float: left;
+        }
+        .A2{
+            float: right;
+        }
+
+        /* Booking*/
+        .book-1{
+                display: flex;
+        justify-content: space-between;
+        width:100%;
+        height: 100%;
+        margin:0%;
+        padding-bottom: 50px;
+        padding-top: 100px;
+        background-image: url('https://www.liveabout.com/thmb/l9yK5fbahqhtJiI0xprxCIuhJ7U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/reserved-sign-on-restaurant-table-534761709-d4ef78d8a57743429658561abb9f615e.jpg');
+        background-repeat: no-repeat;
+        background-size:100% 100%;
+        }
+        .B1, .B2 {
+         width: 48%;
+        }
+        .B2{
+            border: 3px solid white;
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 400px;
+            margin-right: 100px;
+        }
+        .B1 h1, .B1 h2 {
+            margin-left: 0%;
+            padding-left: 0%;
+            font-size: 80px;
+        }
+
+        .B2 form {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            color: white;   
+        }
+
+        .B2 input {
+            margin-bottom: 10px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.4);
+            width: 370px;
+            color: white;
+        }
+        .B2 button {
+            padding: 20px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            width: 370px;
+        }
+
+        .B2 button:hover {
+            background-color: #218838;
+        }
+        /*Menu*/
+        .menu {
+            text-align: center;
+            padding-top: 500px;
+            background-color: pink;
+        }
+        .menu h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        .menu .description {
+            margin-bottom: 2em;
+            font-size: 1em;
+            color: black;
+            margin-left: 150px;
+        }
+        .menu-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .menu-section-1 {
+            background-color:#8b597b;
+            padding: 100px;
+            border-radius: 30px;
+            margin: 0px;
+        }
+        .menu-section{
+            background-color:lightslategray;
+            padding: 100px;
+            border-radius: 30px;
+            margin: 0px;
+        }
+
+        .menu-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 1em;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1em;
+            background-color: #fff;
+            border-radius: 15px;
+        }
+        .menu-item img {
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        }
+        .menu-item span {
+            font-size: larger;
+            flex-grow: 4;
+            text-align: left;
+            padding: 10px;
+        }
+        #Articals {
+    margin: 20px;
+    padding: 20px;
+    
+}
+
+#Articals h2 {
+    font-size: 30px;
+    color: #333;
+}
+
+#Articals ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+#Articals li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+#Articals a {
+    text-decoration: none;
+    color:#333;
+    font-weight: bold;
+}
+
+#Articals a:hover {
+    text-decoration: none;
+    color:white;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- Navigation Bar -->
+        <nav class="nav-bar">
+                <ul>
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#book">Book table</a></li>
+                    <li><a href="#Articals">Articals</a></li>
+                </ul>
+            
+        
+        <!-- Home Section 
+        <section class="section home-section" id="home">-->
+            <div class="intro">
+                <h1>Welcome to our cafe!</h1>
+                <p>Place to enjoy a fresh cup of coffee.</p>
+            </div>
+        </nav>
+    </div>
+    <div class="down">
+        <!-- About Section -->
+        <section class="section" id="about">
+            <h2 style="font-size: 40px">About us</h2>
+            <p style="text-align: center;">We provide a tasty,refreshing and best quality coffee,where each sip makes you feel light and free. </p>
+            <br>
+            <hr>
+            <div class="about">
+                <div class="A1" style="max-width: 400px;">
+                    <h2 style="font-size: 40px;">Coffee Cup</h2>
+                        <pre><h3 style="font-family: none;font-size: 20px;color: white;margin-left: 10px;padding-left: 30px;padding-top: 20px;">                                  Welcome to Coffee Cup,
+                             where every sip is a delight. 
+                             We're passionate about serving 
+                             expertly crafted coffee, 
+                             delicious treats, and a warm 
+                             atmosphere that makes you feel 
+                             right at home.
+                             This site is for 
+                             those,the smell of fresh-made 
+                             coffee is one of the greatest 
+                             investment.</h3></pre>
+                    <h2 style="font-size:40px">Opening hours</h2>
+                    <br>
+                    <ul style="list-style: none;margin-left: 180px;color: white;font-size: 20px;">
+                        <li>Monday-Friday:08:00-22:00</li>
+                        <li>Saturday:10:00-20:00</li>
+                        <li>Sunday:10:00-18:00</li>
+                    </ul>
+                </div>
+                <br>
+                <div class="A2" style=" width:max-content;padding-top: 50px;height:max-content;">
+                    <img src="https://images.pexels.com/photos/414628/pexels-photo-414628.jpeg?cs=srgb&dl=pexels-pixabay-414628.jpg&fm=jpg" alt="coffee cup" style="width: 600px; height: 700px; margin-right:200px; padding-top: 90px;box-shadow: 200px 100px 0px rgba(0, 0, 0, 0.1);">
+                </div>
+            </div>
+        </section>
+        <!-- Menu Section -->
+        <section class="section menu-section" id="menu" style="padding-top: 400px;">
+           <!-- <h2>MENU</h2>
+            <div class="menu-item">
+                <img src="https://t4.ftcdn.net/jpg/06/88/90/33/360_F_688903378_rwQfgVxIhbRhbRvfiMkIhwvUTkNcFZfe.jpg" alt="Menu Item 1">
+                <h3>Hot Coffee</h3>
+                <p>$10.99</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://deliciousmadeeasy.com/wp-content/uploads/2018/04/chocoholic-cold-brew-coffee-1-of-1-7-scaled.jpg" alt="Menu Item 2">
+                <h3>Cold coffee</h3>
+                <p>$12.99</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://static.vecteezy.com/system/resources/previews/023/558/535/non_2x/close-up-of-a-juicy-burger-with-fries-it-look-very-delicious-big-sandwich-hamburger-with-juicy-beef-burger-cheese-tomato-and-red-onion-photo.jpg" alt="Menu Item 3">
+                <h3>Burger</h3>
+                <p>$15.99</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://c4.wallpaperflare.com/wallpaper/234/543/684/food-pizza-wallpaper-preview.jpg" alt="Menu Item 3">
+                <h3>Pizza</h3>
+                <p>$30.99</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://5.imimg.com/data5/ANDROID/Default/2023/5/310638302/JO/YH/TM/18155289/product-jpeg-250x250.jpg" alt="Menu Item 3">
+                <h3>French fries</h3>
+                <p>$30.99</p>
+            </div>-->
+            <!-- Add more menu items here -->
+            <div class="menu">
+                <h1>Menu</h1>
+                <p class="description">"Welcome to our café! Explore our delightful menu, crafted with love and the finest ingredients to satisfy your taste buds. Whether you're craving a fresh brew, a sweet treat, or a hearty meal, we've got something special just for you."
+
+                </p>
+                <div class="menu-content">
+                    <div class="menu-section-1">
+                        <h2>To Drink</h2>
+                        <div class="menu-item">
+                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201606/coffee-story_647_061616085217.jpg?VersionId=PaeRB0JUxex7XueOWRIqyQtmVDox9oMk&size=690:388" alt="Hot coffee">
+                            <span>Hot Coffee</span>
+                            <span>15/-</span>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://deliciousmadeeasy.com/wp-content/uploads/2018/04/chocoholic-cold-brew-coffee-1-of-1-7-scaled.jpg" alt="Cold Coffee">
+                            <span>Cold Coffee</span>
+                            <span>40/-</span>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Cappuccino_at_Sightglass_Coffee.jpg" alt="Cappuccino">
+                            <span>Cappuccino</span>
+                            <span>50/-</span>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://cdn.cdnparenting.com/articles/2020/02/03114800/MIX-FRUIT-JUICE-RECIPE.webp" alt="Mix Fruit">
+                            <span>Mix Fruit juice</span>
+                            <span>40/-</span>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://i.pinimg.com/736x/b5/a7/55/b5a755bc33d9bc2407791725a03e0583.jpg" alt="Cocktail">
+                            <span>Cocktail</span>
+                            <span>45/-</span>
+                        </div>
+                    </div>
+                    <div class="menu-section">
+                        <h2>To Eat</h2>
+                        <div class="menu-item">
+                            <img src="https://www.livofy.com/health/wp-content/uploads/2021/09/Club-Sandwich-with-Super-Mayo-1024x576.jpg" alt="Sandwitch">
+                            <span>Sandwitch</span>
+                            <span>60/-</span>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://www.tastingtable.com/img/gallery/what-makes-restaurant-burgers-taste-different-from-homemade-burgers-upgrade/intro-1662064407.jpg" alt="Burger">
+                            <span>Burger</span>
+                            <span>60/-</span>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.aws.nestle.recipes/resized/5b069c3ed2feea79377014f6766fcd49_Original_NTH_Chocolate_Chip_Cookie_1080_850.jpg" alt="Chocolate Cookies">
+                            <span>Chocolate Cookies</span>
+                            <span>30/-</span>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://thebigmansworld.com/wp-content/uploads/2024/04/keto-donuts-recipe.jpg" alt="Donuts">
+                            <span>Donuts</span>
+                            <span>40/-</span>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHbB3E5nodEYdARL0DiTszjLa3HPorqvTengH1y01SILzhmPy60U9ZLouJY4tW7VRRSWc&usqp=CAU" alt="Strawberry Cupcakes">
+                            <span>Strawberry Cupcakes</span>
+                            <span>50/-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Booking Section -->
+        <section class="section" id="book">
+            <div class="book-1">
+                <div class="B1">
+                    <h1>Book your table</h1>
+                    <h2>40% OFF on first booking</h2>
+                </div>
+                <div class="B2">
+                    <form id="booking-form">
+                        <label for="name">Full name:</label>
+                        <input type="text" name="name" id="name" required>
+                        <label for="mobile">Mobile no.:</label>
+                        <input type="tel" name="mobile" id="mobile" required pattern="[0-9]{10}">
+                        <label for="date">Date:</label>
+                        <input type="date" name="date" id="date" required>
+                        <label for="time">Time:</label>
+                        <input type="time" name="time" id="time" required>
+                        <label for="members">Number of members:</label>
+                        <input type="number" name="members" id="members" required min="1">
+                        <button type="submit" name="submit" id="submit">Reserve table</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Artical Section -->
+        <section class="section" id="Articals">
+            <h2>Artical</h2>
+            <ol>
+                <li><a href="https://www.medicalnewstoday.com/articles/270202">Coffee</a></li>
+                <li><a href="https://www.medicalnewstoday.com/articles/fruit-juice">Fruit juice</a></li>
+            </ol>
+
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2023 Coffee cup Cafe Website</p>
+        <p>Address: 123 Main Road, Pune, India</p>
+        <p>Phone: 555-555-5555</p>
+        <p>Email: [info@Cafewebsite.com](mailto:info@Cafewebsite.com)</p>
+    </footer>
+
+    <script>
+        // Add event listener to navigation links
+        document.querySelectorAll('.nav-bar a').forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                const sectionId = link.getAttribute('href');
+                document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        //Booking
+        document.getElementById('booking-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Show the popup message
+    alert('Reservation of table is done successfully.');
+});
+event.target.reset();
+
+    </script>
+</body>
+</html>
